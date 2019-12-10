@@ -10,138 +10,155 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/extra.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1>Student Ability Growth Estimation</h1>
-					<p>Hey! This is Tyler and Jesse's project for Stanford's <br /><strong>CS 398: Computation Education</strong>, taught by Chris Piech.</p>
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Problem</a></li>
-						<li><a href="#two" class="button scrolly">Dataset</a></li>
-						<li><a href="#three" class="button scrolly"> Visualizer</a></li>
-						<li><a href="#three" class="button scrolly">Estimator</a></li>
-						<li><a href="#three" class="button scrolly">Analysis</a></li>
-						<li><a href="#three" class="button scrolly">Future Work</a></li>
-					</ul>
-				</div>
-			</section>
+		<section id="header">
+			<div class="inner">
+				<span class="icon solid major fa-cloud"></span>
+				<h1>Student Ability Growth Estimator</h1>
+				<p>Hey! This is Tyler and Jesse's project for Stanford's <br /><strong>CS 398: Computation Education</strong>, taught by Chris Piech.</p>
+				<ul class="actions special">
+					<li><a href="#one" class="button scrolly">Problem</a></li>
+					<li><a href="#two" class="button scrolly">Dataset</a></li>
+					<li><a href="#three" class="button scrolly"> Visualizer</a></li>
+					<li><a href="#three" class="button scrolly">Estimator</a></li>
+					<li><a href="#three" class="button scrolly">Analysis</a></li>
+					<li><a href="#three" class="button scrolly">Future Work</a></li>
+				</ul>
+			</div>
+		</section>
 
 		<!-- One -->
-			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>Problem Statement</h2>
-							</header>
-							<p>Traditional evaluation methods rely on a final exam or assessment to measure a student's growth. However, exam scores often give noisy, inaccurate results, especially for students who aren't good test-takers.</p><p>In our project, we explore the ways a student’s <b>process</b> can be used as a better measurement of their growth in ability. To examine these effects, we will use student submissions in the <b>Hour of Code</b> task on <a href="code.org">Code.org</a>, and try to evaluate students using modern ML techniques.</p>
-						</div>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/code.png" alt="" /></span>
-						</div>
+		<section id="one" class="main style1">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Problem Statement</h2>
+						</header>
+						<p>Traditional evaluation methods rely on a final exam or assessment to measure a student's growth. However, exam scores often give noisy, inaccurate results, especially for students who aren't good test-takers.</p><p>In our project, we explore the ways a student’s <b>process</b> can be used as a better measurement of their growth in ability. To examine these effects, we will use student submissions in the <b>Hour of Code</b> task on <a href="code.org">Code.org</a>, and try to evaluate students using modern ML techniques.</p>
+					</div>
+					<div class="col-6 col-12-medium imp-medium">
+						<span class="image fit"><img src="images/code.png" alt="" /></span>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!-- Two -->
-			<section id="two" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Dataset</h2>
-					</header>
-					<p><b>10</b> problems, <b>45,000</b> students, <b>100,000</b> submissions.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/emptyForLoop.png" alt="" /></span>
-							<h3>First Submission</h3>
-							<p>This student does not have <b>much code yet</b>, but likely has alot of room to grow. Submissions like these can indicate that the student will <b>learn a lot</b> from this exercise.</p>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/fullForLoop.png" alt="" /></span>
-							<h3>Last Submission</h3>
-							<p>The student has much more code now. They have a <b>nested loop</b> structure and <b>move/turn</b> statements. The student has made a lot of progress since their first submission, which is a very good sign!</p>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/rubricItems3.png" alt="" /></span>
-							<h3>Rubric Scoring</h3>
-							<p>These are examples of <b>rubric items</b> we assign to each individual submission. In our project, we also explore how a student's rubric scores <b>change over time</b>.</p>
-						</div>
+		<section id="two" class="main style2 special">
+			<div class="container">
+				<header class="major">
+					<h2>Dataset</h2>
+				</header>
+				<p><b>10</b> problems, <b>45,000</b> students, <b>100,000</b> submissions.</p>
+				<div class="row gtr-150">
+					<div class="col-4 col-12-medium">
+						<span class="image fit"><img src="images/emptyForLoop.png" alt="" /></span>
+						<h3>First Submission</h3>
+						<p>This student does not have <b>much code yet</b>, but likely has a lot of room to grow. Submissions like these can indicate that the student will <b>learn a lot</b> from this exercise.</p>
+					</div>
+					<div class="col-4 col-12-medium">
+						<span class="image fit"><img src="images/fullForLoop.png" alt="" /></span>
+						<h3>Last Submission</h3>
+						<p>The student has much more code now. They have a <b>nested loop</b> structure and <b>move/turn</b> statements. The student has made a lot of progress since their first submission, which is a very good sign!</p>
+					</div>
+					<div class="col-4 col-12-medium">
+						<span class="image fit"><img src="images/rubricItems3.png" alt="" /></span>
+						<h3>Rubric Scoring</h3>
+						<p>These are examples of <b>rubric items</b> we assign to each individual submission. In our project, we also explore how a student's rubric scores <b>change over time</b>.</p>
 					</div>
 				</div>
-			</section>
-			
-			<!-- Three -->
-			<section id="three" class="main style1">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>Data Visualization</h2>
-							</header>
-							<p>The first major deliverable for our project was a command-line interface for inspecting and visualizing student data.</p>
-							<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>					
-						</div>
-						<div class="col-6 col-12-medium">
-							<ul class="major-icons">
-								<li><span class="icon solid style1 major fa-code"></span></li>
-								<li><span class="icon solid style2 major fa-bolt"></span></li>
-								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
-								<li><span class="icon solid style4 major fa-cog"></span></li>
-								<li><span class="icon solid style5 major fa-desktop"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-							</ul>
-							
-						</div>
+			</div>
+		</section>
+		
+		<!-- Two -->
+		<section class="main style1 special">
+			<div class="container">
+				<header class="major">
+					<h2>Data Analysis</h2>
+				</header>
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<span class="image fit"><img src="images/p3-curve.png" alt="" /></span>
+						<h3>Zipf Distribution</h3>
+						<p>This student does not have <b>much code yet</b>, but likely has alot of room to grow. Submissions like these can indicate that the student will <b>learn a lot</b> from this exercise.</p>
+					</div>
+					<div class="col-6 col-12-medium">
+						<span class="image fit"><img src="images/p3-curve.png" alt="" /></span>
+						<h3>Last</h3>
+						<p>The student has much more code now. They have a <b>nested loop</b> structure and <b>move/turn</b> statements. The student has made a lot of progress since their first submission, which is a very good sign!</p>
 					</div>
 				</div>
-			</section>			
-
+			</div>
+		</section>
+	
+		<!-- Three -->
+		<section id="three" class="main style2">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Data Visualization</h2>
+						</header>
+						<p>The first major deliverable for our project was creating a command-line interface for inspecting and visualizing student data.</p>
+						<p>We wanted this tool to be fast and easy to use, enabling us to skim through hundreds of submissions quickly and get a good sense of the data we were working with. We wrote the tool in Python and allowed the user step through different students, each with different submissions, for all 10 problems using keyboard shortcuts.</p>
+						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+					</div>
+					<div class="col-6 col-12-medium">
+						<span class="image fit visualizer"><img src="images/visualizer.png" alt="" /></span>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- TODO: Try to embed a sample here. -->
+		
+		
 		<!-- Four -->
-			<section id="four" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Ipsum feugiat consequat?</h2>
-					</header>
-					<p>Sed lacus nascetur ac ante amet sapien.</p>
-					<ul class="actions special">
-						<li><a href="#" class="button wide primary">Sign Up</a></li>
-						<li><a href="#" class="button wide">Learn More</a></li>
-					</ul>
-				</div>
-			</section>
+		<section id="four" class="main style2 special">
+			<div class="container">
+				<header class="major">
+					<h2>Estimator</h2>
+				</header>
+				<p>Sed lacus nascetur ac ante amet sapien.</p>
+				<ul class="actions special">
+					<li><a href="#" class="button wide primary">Sign Up</a></li>
+					<li><a href="#" class="button wide">Learn More</a></li>
+				</ul>
+			</div>
+		</section>
 
 		<!-- Five -->
 		<section id="three" class="main style2">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<ul class="major-icons">
-								<li><span class="icon solid style1 major fa-code"></span></li>
-								<li><span class="icon solid style2 major fa-bolt"></span></li>
-								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
-								<li><span class="icon solid style4 major fa-cog"></span></li>
-								<li><span class="icon solid style5 major fa-desktop"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-							</ul>
-						</div>
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>Lorem ipsum dolor adipiscing<br />
-								amet dolor consequat</h2>
-							</header>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-							<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-						</div>
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<ul class="major-icons">
+							<li><span class="icon solid style1 major fa-code"></span></li>
+							<li><span class="icon solid style2 major fa-bolt"></span></li>
+							<li><span class="icon solid style3 major fa-camera-retro"></span></li>
+							<li><span class="icon solid style4 major fa-cog"></span></li>
+							<li><span class="icon solid style5 major fa-desktop"></span></li>
+							<li><span class="icon solid style6 major fa-calendar"></span></li>
+						</ul>
+					</div>
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Lorem ipsum dolor adipiscing<br />
+							amet dolor consequat</h2>
+						</header>
+						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+						<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
+						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 			<section id="five" class="main style1">
 				<div class="container">
 					<header class="major special">
@@ -468,7 +485,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; Tyler Yep, Jesse Doan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</section>
 

@@ -1,0 +1,8 @@
+
+.visualizer {
+    border: 15px black solid;
+}
+
+.visualizer img {
+    border-radius: 0;
+}
