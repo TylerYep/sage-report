@@ -25,9 +25,9 @@
 					<li><a href="#one" class="button scrolly">Problem</a></li>
 					<li><a href="#two" class="button scrolly">Dataset</a></li>
 					<li><a href="#three" class="button scrolly"> Visualizer</a></li>
-					<li><a href="#three" class="button scrolly">Estimator</a></li>
-					<li><a href="#three" class="button scrolly">Analysis</a></li>
-					<li><a href="#three" class="button scrolly">Future Work</a></li>
+					<li><a href="#five" class="button scrolly">Estimator</a></li>
+					<li><a href="#six" class="button scrolly">Analysis</a></li>
+					<li><a href="#seven" class="button scrolly">Future Work</a></li>
 				</ul>
 			</div>
 		</section>
@@ -76,7 +76,6 @@
 			</div>
 		</section>
 		
-		<!-- Two -->
 		<section class="main style1 special">
 			<div class="container">
 				<header class="major">
@@ -86,12 +85,12 @@
 					<div class="col-6 col-12-medium">
 						<span class="image fit"><img src="images/p3-curve.png" alt="" /></span>
 						<h3>Zipf Distribution</h3>
-						<p>This student does not have <b>much code yet</b>, but likely has alot of room to grow. Submissions like these can indicate that the student will <b>learn a lot</b> from this exercise.</p>
+						<p>The main reason assessing student code is difficult is because student code is <b>Zipf distributed</b>, which means that it is hard to collect a wide enough dataset to capture enough student submissions in order to use usual deep learning techniques. Thus, a more effective approach is to generate our own data using a <b>recursive grammar</b>.</p>
 					</div>
 					<div class="col-6 col-12-medium">
-						<span class="image fit"><img src="images/p3-curve.png" alt="" /></span>
-						<h3>Last</h3>
-						<p>The student has much more code now. They have a <b>nested loop</b> structure and <b>move/turn</b> statements. The student has made a lot of progress since their first submission, which is a very good sign!</p>
+						<span class="image fit"><img src="images/sub-p1-curve.png" alt="" /></span>
+						<h3># of Student Submissions</h3>
+						<p>The <b>number of submissions per student</b> is as expected - there are many students that get the problem correct in <b>very few tries</b>, but there are a handful of students who take <b>significantly more tries</b> than other students in order to finish the problem.</p>
 					</div>
 				</div>
 			</div>
@@ -108,6 +107,7 @@
 						<p>The first major deliverable for our project was creating a command-line interface for inspecting and visualizing student data.</p>
 						<p>We wanted this tool to be fast and easy to use, enabling us to skim through hundreds of submissions quickly and get a good sense of the data we were working with. We wrote the tool in Python and allowed the user step through different students, each with different submissions, for all 10 problems using keyboard shortcuts.</p>
 						<p>The interface contains options to view code in the autoformatted form or in the abstract syntax tree form, turn on/off our predictive algorithm, and show/hide the student's final report card.</p>
+						<p>Our goal for this data visualization tool is to allow future research on this dataset to more easily examine specific data examples, in order to qualitatively measure a model's predictive ability.</p>
 					</div>
 					<div class="col-6 col-12-medium">
 						<span class="image fit visualizer"><img src="images/visualizer2.png" alt="" /></span>
@@ -115,9 +115,6 @@
 				</div>
 			</div>
 		</section>
-		
-		<!-- TODO: Try to embed a sample here. -->
-		
 		
 		<!-- Four -->
 		<section id="four" class="main style1">
@@ -127,6 +124,7 @@
 						<header class="major">
 							<h2>Grammars</h2>
 						</header>
+						<p>Generating data samples using a grammar is a novel technique in zero-shot learning, which allows us to use human knowledge to encode labels into specific classes of examples.</p>
 						
 					</div>
 					<div class="col-6 col-12-medium">
@@ -144,22 +142,22 @@
 									<tr>
 										<td>1</td>
 										<td>82.3%</td>
-										<td>29.99</td>
+										<td>101342</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>98.9%</td>
-										<td>19.99</td>
+										<td>1895</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>52.5%</td>
-										<td>29.99</td>
+										<td>161342</td>
 									</tr>
 									<tr>
 										<td>4</td>
-										<td>53.8%</td>
-										<td>19.99</td>
+										<td>56.8%</td>
+										<td>181342</td>
 									</tr>
 								</tbody>
 							</table>
@@ -169,18 +167,16 @@
 			</div>
 		</section>
 
-		<!-- Five -->
-		<section id="five" class="main style2">
+		<section class="main style2">
 			<div class="container">
 				<div class="row gtr-150">
 					<div class="col-6 col-12-medium">
 						<header class="major">
 							<h2>Generating + Verifying Grammars</h2>
 						</header>
-						<p>In our third assignment, we explored how to use Chris's idea-to-text engine to randomly generate student code with rubric labels.</p>
+						<p>In our third assignment, we explored how to use Chris's idea-to-text engine with our grammars to randomly generate student code with rubric labels.</p>
 						<p>However, since we were going to be generating our data from a grammar for each of the problems we were interested in, we needed some way of evaluating whether our grammars were complete enough, and sufficiently approximated the true data's distribution.</p>
 						<p>To do so, we wrote grammars for problems 1, 2, 3, and 4. We then evaluated our grammars using completeness as a primary metric, and then L2 distance as a secondary metric. While we did not get as high accuracy on our grammars for problems 3 or 4 compared to problem 1, we still did fairly well given the Zipf distribution of the data.</p>
-
 					</div>
 					<div class="col-6 col-12-medium">
 						<ul class="major-icons">
@@ -192,38 +188,151 @@
 							<li><span class="icon solid style6 major"><b>TurnLeft(120)</b></span></li>
 						</ul>
 					</div>
-					
 				</div>
 			</div>
 		</section>
 		
-		<!-- Six -->
-		<section id="six" class="main style1">
+		<!-- Five -->
+		<section id="five" class="main style1">
 			<div class="container">
 				<div class="row gtr-150">
 					<div class="col-6 col-12-medium">
 						<header class="major">
 							<h2>Estimator</h2>
 						</header>
-						<p>To estimate student ability, we had the following steps:</p>
+						<p>To estimate student ability, we used the following process:</p>
 						<ul>
 							<li>Create grammars for multiple Code.org problems.</li>
 							<li>Validate our grammars by comparing them to the sample data.</li>
-							<li>Train an LSTM for each grammar.</li>
+							<li>Train an LSTM using each grammar.</li>
 							<li>Collect rubric predictions for all student submissions.</li>
 							<li>Identify features of evolving rubric items.</li>
 							<li>Report a score categorizing a student's learning and compare different students.</li>
 						</ul>
 					</div>
 					<div class="col-6 col-12-medium">
-						<h4>Grammar Accuracy</h4>
-
+						<h4>LSTM Train/Test Results</h4>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Prob</th>
+										<th>Loss</th>
+										<th>Train Acc</th>
+										<th>Train F1</th>
+										<th>Test Acc</th>
+										<th>Test F1</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>0.0526</td>
+										<td>97.43%</td>
+										<td>0.9497</td>
+										<td>97.42%</td>
+										<td>0.9500</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>0.0006</td>
+										<td>100.0%</td>
+										<td>1.0000</td>
+										<td>100.0%</td>
+										<td>1.0000</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>0.0896</td>
+										<td>96.48%</td>
+										<td>0.8456</td>
+										<td>96.55%</td>
+										<td>0.8473</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>0.1173</td>
+										<td>94.79%</td>
+										<td>0.8424</td>
+										<td>94.94%</td>
+										<td>0.8491</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		
 		
+		<section class="main style2 special">
+			<div class="container">
+				<header class="major">
+					<h2>Ability Estimator Brainstorming</h2>
+				</header>	
+				<p>We tried several different designs for our estimator, some of which required more deep learning techniques than others.<br />However, our final design was simpler and more effective.</p>
+				<div class="box alt">
+					<div class="row gtr-uniform gtr-50">
+						<div class="col-4">
+							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<a href="#" class="button">Idea 1</a>
+						</div>
+						<div class="col-4">
+							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
+							<a href="#" class="button">Idea 2</a>
+						</div>
+						<div class="col-4">
+							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
+							<a href="#" class="button">Idea 3</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		<section class="main style1">
+			<div class="container">
+				<header class="major">
+					<h2>Transition Matrix</h2>
+				</header>	
+				<p><span class="image right"><img class="matrix" src="images/trans_matrix.png" alt="" /></span>We use a transition matrix to help assign a transition learning score for each rubric item from one submission to its subsequent submission. For an (i, j) entry, i refers to whether or not the first submission contains the current rubric item and j refers to whether or not the second submission contains the current rubric item. 0 denotes not containing a rubric item and 1 denotes containing a rubric item. Therefore, we assign a transition score of +1 (applied to a discount factor which we shall in the following section) when a student goes from 1 to 0 (i.e. having a label to not having a label, yay!) and a transition score of -0.5 when a student goes from 0 to 1 (this allows a student to be able to recover by going from 1 to 0 and gaining a learning transition score of 1 discounted by a factor). If a student stays consistent (0 to 0 or 1 to 1) for a rubric item, then we give a transition score of 0.
+				</p>
+				<p>				
+				</p>
+				<br/>
+				<!-- <span class="image left"></span> -->
+				<header class="major">
+					<h2>Discount Factor</h2>
+				</header>	
+				<p>When we have a transition score of +1 (i.e. when a student goes from 1 to 0 or from having a rubric item to not having that rubric item), we apply a discount factor of 0.9 for every time we have seen a transition from 1 to 0 after the first transition from 1 to 0 for this rubric item. For example, if a student goes from 1 to 0, then 0 to 1, then 1 to 0, the first transition score will be +1, the second transition score will be -0.5, and the third transition score will be +0.9.
+				</p>
+				<img class="score" src="images/score.png" alt="" />	
+				<p>For an individual problem, a student’s problem score is calculated by first taking the sum of the transition scores and then dividing by the square root of the number of submissions. This helps us to differentiate between students who may have spammed submissions and students who submit a reasonable number of submissions. We take the square root of the number of submissions to prevent the problem score from shrinking too quickly. To calculate a student’s total learning score, we sum up all of these problem scores.</p>
+			</div>
+		</section>
+		
+		<!-- Six -->	
+		<section id="six" class="main style1 special">
+			<div class="container">
+				<header class="major">
+					<h2>Results Analysis</h2>
+				</header>
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<span class="image fit"><img src="images/p3-curve.png" alt="" /></span>
+						<h3>Zipf Distribution</h3>
+						<p>The main reason assessing student code is difficult is because student code is <b>Zipf distributed</b>, which means that it is hard to collect a wide enough dataset to capture enough student submissions in order to use usual deep learning techniques. Thus, a more effective approach is to generate our own data using a <b>recursive grammar</b>.</p>
+					</div>
+					<div class="col-6 col-12-medium">
+						<span class="image fit"><img src="images/sub-p1-curve.png" alt="" /></span>
+						<h3># of Student Submissions</h3>
+						<p>The <b>number of submissions per student</b> is as expected - there are many students that get the problem correct in <b>very few tries</b>, but there are a handful of students who take <b>significantly more tries</b> than other students in order to finish the problem.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 		
 		
 		
@@ -267,13 +376,13 @@
 						<h5>Preformatted</h5>
 						<pre><code>i = 0;
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+			while (!deck.isInOrder()) {
+			print 'Iteration ' + i;
+			deck.shuffle();
+			i++;
+			}
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+			print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					</section>
 
 					<section>
@@ -535,9 +644,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
 								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
 								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
 							</div>
 						</div>
 						<h5>Left &amp; Right</h5>
@@ -548,28 +654,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</div>
 			</section>
 		
-
 		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Tyler Yep, Jesse Doan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</section>
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Tyler Yep, Jesse Doan</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</section>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
