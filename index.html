@@ -107,10 +107,10 @@
 						</header>
 						<p>The first major deliverable for our project was creating a command-line interface for inspecting and visualizing student data.</p>
 						<p>We wanted this tool to be fast and easy to use, enabling us to skim through hundreds of submissions quickly and get a good sense of the data we were working with. We wrote the tool in Python and allowed the user step through different students, each with different submissions, for all 10 problems using keyboard shortcuts.</p>
-						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+						<p>The interface contains options to view code in the autoformatted form or in the abstract syntax tree form, turn on/off our predictive algorithm, and show/hide the student's final report card.</p>
 					</div>
 					<div class="col-6 col-12-medium">
-						<span class="image fit visualizer"><img src="images/visualizer.png" alt="" /></span>
+						<span class="image fit visualizer"><img src="images/visualizer2.png" alt="" /></span>
 					</div>
 				</div>
 			</div>
@@ -120,45 +120,119 @@
 		
 		
 		<!-- Four -->
-		<section id="four" class="main style2 special">
-			<div class="container">
-				<header class="major">
-					<h2>Estimator</h2>
-				</header>
-				<p>Sed lacus nascetur ac ante amet sapien.</p>
-				<ul class="actions special">
-					<li><a href="#" class="button wide primary">Sign Up</a></li>
-					<li><a href="#" class="button wide">Learn More</a></li>
-				</ul>
-			</div>
-		</section>
-
-		<!-- Five -->
-		<section id="three" class="main style2">
+		<section id="four" class="main style1">
 			<div class="container">
 				<div class="row gtr-150">
 					<div class="col-6 col-12-medium">
-						<ul class="major-icons">
-							<li><span class="icon solid style1 major fa-code"></span></li>
-							<li><span class="icon solid style2 major fa-bolt"></span></li>
-							<li><span class="icon solid style3 major fa-camera-retro"></span></li>
-							<li><span class="icon solid style4 major fa-cog"></span></li>
-							<li><span class="icon solid style5 major fa-desktop"></span></li>
-							<li><span class="icon solid style6 major fa-calendar"></span></li>
-						</ul>
+						<header class="major">
+							<h2>Grammars</h2>
+						</header>
+						
 					</div>
 					<div class="col-6 col-12-medium">
-						<header class="major">
-							<h2>Lorem ipsum dolor adipiscing<br />
-							amet dolor consequat</h2>
-						</header>
-						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-						<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-						<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+						<h4>Grammar Accuracy</h4>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Problem</th>
+										<th>Completeness-%</th>
+										<th>L2 Distance</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>82.3%</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>98.9%</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>52.5%</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>53.8%</td>
+										<td>19.99</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<!-- Five -->
+		<section id="five" class="main style2">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Generating + Verifying Grammars</h2>
+						</header>
+						<p>In our third assignment, we explored how to use Chris's idea-to-text engine to randomly generate student code with rubric labels.</p>
+						<p>However, since we were going to be generating our data from a grammar for each of the problems we were interested in, we needed some way of evaluating whether our grammars were complete enough, and sufficiently approximated the true data's distribution.</p>
+						<p>To do so, we wrote grammars for problems 1, 2, 3, and 4. We then evaluated our grammars using completeness as a primary metric, and then L2 distance as a secondary metric. While we did not get as high accuracy on our grammars for problems 3 or 4 compared to problem 1, we still did fairly well given the Zipf distribution of the data.</p>
+
+					</div>
+					<div class="col-6 col-12-medium">
+						<ul class="major-icons">
+							<li><span class="icon solid style1 major"><b>For(20, 200, 20)</b></span></li>
+							<li><span class="icon solid style2 major"><b>Repeat(3)</b></span></li>
+							<li><span class="icon solid style3 major"><b>Repeat(3)</b></span></li>
+							<li><span class="icon solid style4 major"><b>Move(50)</b></span></li>
+							<li><span class="icon solid style5 major"><b>Move(50)</b></span></li>
+							<li><span class="icon solid style6 major"><b>TurnLeft(120)</b></span></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		
+		<!-- Six -->
+		<section id="six" class="main style1">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Estimator</h2>
+						</header>
+						<p>To estimate student ability, we had the following steps:</p>
+						<ul>
+							<li>Create grammars for multiple Code.org problems.</li>
+							<li>Validate our grammars by comparing them to the sample data.</li>
+							<li>Train an LSTM for each grammar.</li>
+							<li>Collect rubric predictions for all student submissions.</li>
+							<li>Identify features of evolving rubric items.</li>
+							<li>Report a score categorizing a student's learning and compare different students.</li>
+						</ul>
+					</div>
+					<div class="col-6 col-12-medium">
+						<h4>Grammar Accuracy</h4>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<section id="five" class="main style1">
 				<div class="container">
 					<header class="major special">
