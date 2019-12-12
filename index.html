@@ -32,7 +32,7 @@
 			</div>
 		</section>
 
-		<!-- One -->
+		<!-- 1. Problem -->
 		<section id="one" class="main style1">
 			<div class="container">
 				<div class="row gtr-150">
@@ -49,7 +49,7 @@
 			</div>
 		</section>
 
-		<!-- Two -->
+		<!-- 2. Dataset -->
 		<section id="two" class="main style2 special">
 			<div class="container">
 				<header class="major">
@@ -96,7 +96,7 @@
 			</div>
 		</section>
 	
-		<!-- Three -->
+		<!-- 3. Visualizer -->
 		<section id="three" class="main style2">
 			<div class="container">
 				<div class="row gtr-150">
@@ -116,7 +116,7 @@
 			</div>
 		</section>
 		
-		<!-- Four -->
+		<!-- 4. Grammar -->
 		<section id="four" class="main style1">
 			<div class="container">
 				<div class="row gtr-150">
@@ -124,8 +124,7 @@
 						<header class="major">
 							<h2>Grammars</h2>
 						</header>
-						<p>Generating data samples using a grammar is a novel technique in zero-shot learning, which allows us to use human knowledge to encode labels into specific classes of examples.</p>
-						
+						<p>Generating data samples using a grammar is a novel technique in zero-shot learning, which allows us to use human knowledge to encode labels into specific classes of examples. The goal of our grammar is to match the distribution of the true distribution of student submissions.</p>
 					</div>
 					<div class="col-6 col-12-medium">
 						<h4>Grammar Accuracy</h4>
@@ -192,7 +191,7 @@
 			</div>
 		</section>
 		
-		<!-- Five -->
+		<!-- 5. Estimator -->
 		<section id="five" class="main style1">
 			<div class="container">
 				<div class="row gtr-150">
@@ -271,11 +270,12 @@
 				<header class="major">
 					<h2>Ability Estimator Brainstorming</h2>
 				</header>	
-				<p>We tried several different designs for our estimator, some of which required more deep learning techniques than others.<br />However, our final design was simpler and more effective.</p>
+				<p>We tried several different designs for our estimator, some of which required more deep learning techniques than others.<br />However, our final design was simpler and more effective than trying to analyze all possible pairs of student submissions.</p>
 				<div class="box alt">
 					<div class="row gtr-uniform gtr-50">
 						<div class="col-4">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/graph1.jpg" alt="" 
+								style="border: 10px white solid"/></span>
 							<a href="#" class="button">Idea 1</a>
 						</div>
 						<div class="col-4">
@@ -297,14 +297,12 @@
 				<header class="major">
 					<h2>Transition Matrix</h2>
 				</header>	
-				<p><span class="image right"><img class="matrix" src="images/trans_matrix.png" alt="" /></span>We use a transition matrix to help assign a transition learning score for each rubric item from one submission to its subsequent submission. For an (i, j) entry, i refers to whether or not the first submission contains the current rubric item and j refers to whether or not the second submission contains the current rubric item. 0 denotes not containing a rubric item and 1 denotes containing a rubric item. Therefore, we assign a transition score of +1 (applied to a discount factor which we shall in the following section) when a student goes from 1 to 0 (i.e. having a label to not having a label, yay!) and a transition score of -0.5 when a student goes from 0 to 1 (this allows a student to be able to recover by going from 1 to 0 and gaining a learning transition score of 1 discounted by a factor). If a student stays consistent (0 to 0 or 1 to 1) for a rubric item, then we give a transition score of 0.
-				</p>
-				<p>				
+				<p><span class="image right"><img class="matrix" src="images/trans_matrix.png" alt="" /></span>We use a transition matrix to help assign a transition learning score for each rubric item from one submission to its subsequent submission. For an (i, j) entry, i refers to whether or not the first submission contains the current rubric item and j refers to whether or not the second submission contains the current rubric item. 0 denotes not containing a rubric item and 1 denotes containing a rubric item.</p>
+				<p>Therefore, we assign a transition score of +1 (applied to a discount factor which we shall in the following section) when a student goes from 1 to 0 (i.e. having a label to not having a label, yay!) and a transition score of -0.5 when a student goes from 0 to 1 (this allows a student to be able to recover by going from 1 to 0 and gaining a learning transition score of 1 discounted by a factor). If a student stays consistent (0 to 0 or 1 to 1) for a rubric item, then we give a transition score of 0.
 				</p>
 				<br/>
-				<!-- <span class="image left"></span> -->
 				<header class="major">
-					<h2>Discount Factor</h2>
+					<h3>Discount Factor</h3>
 				</header>	
 				<p>When we have a transition score of +1 (i.e. when a student goes from 1 to 0 or from having a rubric item to not having that rubric item), we apply a discount factor of 0.9 for every time we have seen a transition from 1 to 0 after the first transition from 1 to 0 for this rubric item. For example, if a student goes from 1 to 0, then 0 to 1, then 1 to 0, the first transition score will be +1, the second transition score will be -0.5, and the third transition score will be +0.9.
 				</p>
@@ -341,7 +339,7 @@
 		
 		
 		
-		
+		<!--
 			<section id="five" class="main style1">
 				<div class="container">
 					<header class="major special">
@@ -653,7 +651,7 @@
 
 				</div>
 			</section>
-		
+		-->
 		<!-- Footer -->
 		<section id="footer">
 			<ul class="icons">
