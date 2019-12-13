@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
-<!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!-- Photon by HTML5 UP
+	 html5up.net | @ajlkn
+	 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) -->
 <html>
 	<head>
 		<title>CS 398 Final Project</title>
@@ -142,7 +140,7 @@
 									<tr>
 										<td>1</td>
 										<td>82.3%</td>
-										<td>101342</td>
+										<td>101391</td>
 									</tr>
 									<tr>
 										<td>2</td>
@@ -157,7 +155,7 @@
 									<tr>
 										<td>4</td>
 										<td>56.8%</td>
-										<td>181342</td>
+										<td>181267</td>
 									</tr>
 								</tbody>
 							</table>
@@ -176,7 +174,7 @@
 						</header>
 						<p>In our third assignment, we explored how to use Chris's idea-to-text engine with our grammars to randomly generate student code with rubric labels.</p>
 						<p>However, since we were going to be generating our data from a grammar for each of the problems we were interested in, we needed some way of evaluating whether our grammars were complete enough, and sufficiently approximated the true data's distribution.</p>
-						<p>To do so, we wrote grammars for problems 1, 2, 3, and 4. We then evaluated our grammars using completeness as a primary metric, and then L2 distance as a secondary metric. While we did not get as high accuracy on our grammars for problems 3 or 4 compared to problem 1, we still did fairly well given the Zipf distribution of the data.</p>
+						<p>To do so, we wrote grammars for problems 1, 2, 3, and 4. We then evaluated our grammars using completeness as a primary metric, and then L2 distance as a secondary metric. While we did not get as high accuracy on our grammars for problems 3 or 4 compared to problem 1, our grammars still performed well given the Zipf distribution of the data.</p>
 					</div>
 					<div class="col-6 col-12-medium">
 						<ul class="major-icons">
@@ -265,7 +263,6 @@
 			</div>
 		</section>
 		
-		
 		<section class="main style2 special">
 			<div class="container">
 				<header class="major">
@@ -299,7 +296,7 @@
 			</div>
 		</section>
 		
-		<!-- Modal -->
+		<!-- Modals -->
 		<div class="modal fade" id="idea1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -384,9 +381,10 @@
 		<section class="main style2">
 			<div class="container">
 				<header class="major">
-					<h2>Anomaly Detection</h2>
+					<h2>Surprisal Detection</h2>
 				</header>	
-				<p>The results of our experiments found examples of student submissions who had interesting sequences of submissions (could possibly be explained by cheating, as the student suddenly submitted the correct answer very abruptly). However, assuming the best case, the results of our growth scoring is intended to showcase students that exhibit a high level of surprisal in their submissions - which is a strong sign of definitive learning.</p>
+				<p>The results of our experiments found examples of student submissions who had interesting sequences of submissions (possibly examples of cheating, as the student suddenly submitted the correct answer very abruptly). However, assuming the best case scenario, the results of our growth scoring is intended to showcase students that exhibit a high level of "surprisal" in their submissions - a large gain in solving rubric item problems is a strong sign of definitive learning.</p>
+				<p>We chose to model a large "surprisal" as a large change in ability obtained via changes in rubric items across submissions. In order to calculate this, we used a transition matrix to describe the change in score for any rubric item change.</p>
 			</div>
 		</section>
 		
@@ -404,12 +402,14 @@
 				</header>	
 				<p>When we have a transition score of +1 (i.e. when a student goes from 1 to 0 or from having a rubric item to not having that rubric item), we apply a discount factor of 0.9 for every time we have seen a transition from 1 to 0 after the first transition from 1 to 0 for this rubric item. For example, if a student goes from 1 to 0, then 0 to 1, then 1 to 0, the first transition score will be +1, the second transition score will be -0.5, and the third transition score will be +0.9.
 				</p>
-				<img class="score" src="images/score.png" alt="" />	
+				<div class="container score">
+					<img class="score" src="images/score.png" alt="" />	
+				</div>
 				<p>For an individual problem, a student’s problem score is calculated by first taking the sum of the transition scores and then dividing by the square root of the number of submissions. This helps us to differentiate between students who may have spammed submissions and students who submit a reasonable number of submissions. We take the square root of the number of submissions to prevent the problem score from shrinking too quickly. To calculate a student’s total learning score, we sum up all of these problem scores.</p>
 			</div>
 		</section>
 		
-		<!-- Six -->	
+		<!-- 6. Result Analysis -->	
 		<section id="six" class="main style2 special">
 			<div class="container">
 				<header class="major">
@@ -450,7 +450,8 @@
 				<p>Note that these distributions represent a <i>single</i> problem's scores, while the program output above shows the sum of all problem scores.</p>
 			</div>
 		</section>
-		
+
+		<!-- 7. Future Work-->		
 		<section id="seven" class="main style2 special">
 			<div class="container">
 				<header class="major">
@@ -487,6 +488,5 @@
 		<script src="assets/js/zenscroll-min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

@@ -22,10 +22,9 @@
 
 .matrix {
     max-width: 200px;
-    /* padding: 10px;
-    border: 3px black solid; */
 }
 
 .score {
     max-width: 800px;
+    margin: auto;
 }
