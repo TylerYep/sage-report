@@ -6,10 +6,14 @@
     border-radius: 0;
 }
 
+.visualizer-white img {
+    border-radius: 0;
+}
+
 .main.style2 ul.major-icons li .icon::after {
     background: #ffffff;
     content: '';
-    height: 6vw;
+    height: 100px;
     left: 50%;
     position: absolute;
     top: 100%;
